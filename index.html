@@ -270,12 +270,13 @@
         </button>
         <div class="menu-items" id="menu-items">
             <div class="menu-title">BIPH Music</div>
-            <a href="https://biphmusic.github.io/Home">Home</a>
-            <a href="https://biphmusic.github.io/APVocabulary/">Vocabulary</a>
+            <a href="https://biphmusic.github.io/">Home</a>
+            <a href="https://biphmusic.github.io/APUnits/">AP Units</a>
+            <a href="https://biphmusic.github.io/FlashCards/">Flash Cards</a>
             <a href="https://biphmusic.github.io/MusicTheoryDice/">Dice Simulator</a>
-            <a href="https://www.musictheory.net/">MusicTheory.net</a>
-            <a href="https://teoria.com/">Teoria.com</a>
-            <a href="#">Ear Training</a>
+            <a href="https://biphmusic.github.io/WebPiano/">Web Piano</a>
+            <a href="https://biphmusic.github.io/WordWall/">Word Wall</a>
+            <a href="mailto:garrison.tubbs-biph@basischina.com">Contact</a>
             
             <div class="menu-footer">© Garrison Tubbs 2024</div>
         </div>
@@ -420,12 +421,21 @@
 
         // Hamburger menu functionality
         const menuToggle = document.querySelector('.menu-toggle');
-        const menuItems = document.querySelector('.menu-items');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('open');
-            menuItems.classList.toggle('show');
-        });
+    const menuItems = document.querySelector('.menu-items');
+    
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        menuItems.classList.toggle('show');
+    });
+    
+    // Close the menu when clicking outside
+    document.addEventListener('click', (event) => {
+        // Check if the click was outside the menu and the toggle button
+        if (!menuToggle.contains(event.target) && !menuItems.contains(event.target)) {
+            menuToggle.classList.remove('open');
+            menuItems.classList.remove('show');
+        }
+    });
     </script>
 </body>
 </html>
